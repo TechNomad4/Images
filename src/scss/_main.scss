@@ -1,0 +1,133 @@
+#title {
+  font-size: 3rem;
+  font-family: $primaryFont;
+  max-width: 80vw;
+  margin: 2rem auto;
+}
+
+main {
+  @include flex(space-around, flex-start);
+  max-width: 80vw;
+  margin: 4rem auto 1rem;
+  font-family: $primaryFont;
+
+  > section {
+    @include flex(flex-start, center);
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    .underline {
+      height: 2px;
+      width: 100%;
+      background-color: #23509c;
+      margin: 2rem 0;
+    }
+
+    .buttons {
+      @include flex(flex-start, center);
+      flex-wrap: wrap;
+
+      &.parts {
+        button {
+          font-size: 0.9rem;
+          padding: 5px 10px;
+
+          &.active {
+            background-color: #23509c;
+            color: #fff;
+          }
+        }
+      }
+
+      button {
+        font-family: $primaryFont;
+        margin: 0.5rem;
+        background: none;
+        color: #5a86c8;
+        border: 3px solid #5a86c8;
+        border-radius: 20px;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: $defaultTransition;
+
+        &:hover {
+          color: #23509c;
+          border: 3px solid #23509c;
+        }
+
+        &.active {
+          background-color: #23509c;
+          color: #fff;
+        }
+      }
+    }
+
+    .content {
+      position: relative;
+
+      #ears,
+      #eyes,
+      #hair,
+      #leg,
+      #neck,
+      #mouth,
+      #accessories,
+      #nose {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      #eyes,
+      #mouth {
+        z-index: 2;
+      }
+    }
+
+    .mechanics {
+      @include flex(flex-start, center);
+      width: 100%;
+
+      #download,
+      #random {
+        font-family: $primaryFont;
+        margin: 1rem 0.5rem;
+        padding: 10px 30px;
+        border-radius: 30px;
+        font-size: 1.3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        background-color: #292c34;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: $defaultTransition;
+
+        &:hover {
+          background-color: #fff;
+          color: #292c34;
+          border: 2px solid #292929;
+        }
+      }
+    }
+
+    &.accessories {
+      > div {
+        width: 100%;
+      }
+    }
+
+    &.image {
+      img {
+        width: 80%;
+      }
+    }
+  }
+}
